@@ -1,0 +1,26 @@
+<div class="register-container">
+    <h2>Alterar Usuário</h2>
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="cancelAltUser()">Voltar</button>
+        <!-- <button class="btn btn-primary" (click)="cadUser()">Lista de doações </button>
+        <button class="btn btn-primary" (click)="cadUser()">Lista de doações diversas</button> -->
+    </div>
+    <form [formGroup]="AltUserForm" (ngSubmit)="onAltUser()">
+        <div class="mb-3">
+            <label for="iddoador" class="form-label">iddoador</label>
+            <input type="number" class="form-control" formControlName="iddoador" placeholder="Seu ID">
+        </div>
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" formControlName="nome" placeholder="Seu Nome">
+        </div>
+
+        <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control"  formControlName="telefone" placeholder="(XX) XXXXX-XXXX">
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-100" >Salvar</button>
+    </form>
+</div>

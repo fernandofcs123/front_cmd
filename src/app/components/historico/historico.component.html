@@ -1,0 +1,46 @@
+<div class="list-container">
+    <h2 class="text-center">Historico Completo</h2>
+    <!-- Botão para adicionar novo usuário -->
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="home()">Voltar</button>
+        <!-- <button class="btn btn-primary" (click)="cadUser()">Lista de doações </button>
+        <button class="btn btn-primary" (click)="cadUser()">Lista de doações diversas</button> -->
+    </div>
+    
+    <!-- Tabela de usuários -->
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">IDHistorico</th>
+                <th scope="col">IDEntrada</th>
+                <th scope="col">IDSaida</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Data</th>
+                <!-- <th scope="col" class="text-center">Ações</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemplo de usuário - repita essa linha para cada usuário da lista -->
+            @for(historico of historicoList$ | async; track historico;){
+            <tr>
+                <td>{{historico.idhistorico}}</td>
+                <td>{{historico.identrada}}</td>
+                <td>{{historico.idsaida}}</td>
+                <td>{{historico.nome}}</td>
+                <td>{{historico.descricao}}</td>
+                <td>{{historico.valor}}</td>
+                <td>{{historico.data}}</td>
+                <!-- <td class="text-center">
+                    <button class="btn btn-sm btn-success btn-action" (click)="editUser()">Editar</button>
+                    <button class="btn btn-sm btn-danger btn-action">Excluir</button>
+                    <button class="btn btn-sm btn-info btn-action" (click)="novaDoacao()">Nova Doação</button>
+                </td> -->
+            </tr>
+        }
+            <!-- Fim do exemplo de usuário -->
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,20 @@
+<div class="register-container">
+    <h2>Cadastrar Saída</h2>
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="saidas()">Voltar</button>
+    </div>
+    <form [formGroup]="CadSaidaForm" (ngSubmit)="onCadSaida()">
+  
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descricao</label>
+            <input type="text" class="form-control"  formControlName="descricao" placeholder="30kg de frango">
+        </div>
+
+        <div class="mb-3">
+            <label for="valor" class="form-label">Valor</label>
+            <input type="number" class="form-control"  formControlName="valor" placeholder="350">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+    </form>
+</div>

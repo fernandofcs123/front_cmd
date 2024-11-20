@@ -1,0 +1,47 @@
+<div class="list-container">
+    <h2 class="text-center">Historico de Entradas</h2>
+    <!-- Botão para adicionar novo usuário -->
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="home()">Voltar</button>
+        <!-- <button class="btn btn-primary" (click)="cadUser()">Lista de doações </button>
+        <button class="btn btn-primary" (click)="cadUser()">Lista de doações diversas</button> -->
+    </div>
+    
+    <!-- Tabela de usuários -->
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">IDEntrada</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Data</th>
+                <th scope="col" class="text-center">Ações</th>
+                <!-- <th scope="col" class="text-center">Ações</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemplo de usuário - repita essa linha para cada usuário da lista -->
+            @for(entrada of entradaList$ | async; track entrada;){
+            <tr>
+                <td>{{entrada.identrada}}</td>
+                <td>{{entrada.Nome}}</td>
+                <td>{{entrada.Telefone}}</td>
+                <td>{{entrada.Valor}}</td>
+                <td>{{entrada.Data}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success btn-action" (click)="editDoacao()">Editar</button>
+                    <button class="btn btn-sm btn-danger btn-action" (click)="excluirEntrada()">Excluir</button>
+                </td>
+                <!-- <td class="text-center">
+                    <button class="btn btn-sm btn-success btn-action" (click)="editUser()">Editar</button>
+                    <button class="btn btn-sm btn-danger btn-action">Excluir</button>
+                    <button class="btn btn-sm btn-info btn-action" (click)="novaDoacao()">Nova Doação</button>
+                </td> -->
+            </tr>
+        }
+            <!-- Fim do exemplo de usuário -->
+        </tbody>
+    </table>
+</div>
+
