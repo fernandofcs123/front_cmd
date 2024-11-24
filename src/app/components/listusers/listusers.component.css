@@ -1,0 +1,148 @@
+/* Container principal */
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #007bff;
+    color: white;
+    transition: width 0.5s ease;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+
+
+.sidebar.open {
+    width: 250px;
+}
+
+/* Botão para abrir/fechar sidebar */
+.toggle-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+/* Conteúdo da sidebar */
+.sidebar-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content .btn {
+    margin: 5px;
+    background-color: #0056b3;
+    border: none;
+    color: white;
+    text-align: left;
+    width: calc(100% - 10px);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-content .btn:hover {
+    background-color: yellow;
+}
+
+/* Conteúdo principal */
+.main-content {
+    margin-left: 60px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.open~.main-content {
+    margin-left: 250px;
+}
+
+/* Tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.table th,
+.table td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .sidebar.open~.main-content {
+        margin-left: 0;
+    }
+}
+
+/* Botões na tabela */
+.btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 2.0;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-info {
+    background-color: #2CC0FF;
+    border-color: #2CC0FF;
+    color: white;
+}

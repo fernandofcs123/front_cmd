@@ -1,0 +1,31 @@
+<div class="register-container">
+    <h2>Alterar Saída</h2>
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="voltar()">Voltar</button>
+        <!-- <button class="btn btn-primary" (click)="cadUser()">Lista de doações </button>
+        <button class="btn btn-primary" (click)="cadUser()">Lista de doações diversas</button> -->
+    </div>
+    <form [formGroup]="AltSaidaForm" (ngSubmit)="onAltSaida()">
+        <div class="mb-3">
+            <label for="idsaida" class="form-label">ID da saída</label>
+            <input type="number" class="form-control" formControlName="idsaida" placeholder="12">
+        </div>
+
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descricao</label>
+            <input type="text" class="form-control" formControlName="descricao" placeholder="12kg de feijão preto">
+        </div>
+
+        <div class="mb-3">
+            <label for="valor" class="form-label">Valor</label>
+            <input type="number" class="form-control" formControlName="valor" placeholder="120">
+        </div>
+<!-- 
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descricao</label>
+            <input type="text" class="form-control"  formControlName="descricao" placeholder="10kg de feijão">
+        </div>
+         -->
+        <button type="submit" class="btn btn-primary w-100" >Alterar</button>
+    </form>
+</div>

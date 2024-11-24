@@ -1,0 +1,16 @@
+<div class="register-container">
+    <h2>Excluir Saída</h2>
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="cancelAltUser()">Voltar</button>
+        <!-- <button class="btn btn-primary" (click)="cadUser()">Lista de doações </button>
+        <button class="btn btn-primary" (click)="cadUser()">Lista de doações diversas</button> -->
+    </div>
+    <form [formGroup]="AltUserForm" (ngSubmit)="onDelSaida()">
+        <div class="mb-3">
+            <label for="idsaida" class="form-label">ID da saída</label>
+            <input type="number" class="form-control" formControlName="idsaida" placeholder="Seu ID">
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-100" >Excluir</button>
+    </form>
+</div>

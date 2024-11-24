@@ -1,0 +1,31 @@
+<div class="register-container">
+    <h2>Alterar Doação Diversa</h2>
+    <div class="text-end mb-3">
+        <button class="btn btn-primary" (click)="voltar()">Voltar</button>
+        <!-- <button class="btn btn-primary" (click)="cadUser()">Lista de doações </button>
+        <button class="btn btn-primary" (click)="cadUser()">Lista de doações diversas</button> -->
+    </div>
+    <form [formGroup]="AltDoacaoForm" (ngSubmit)="onAltDoacaoDiv()">
+        <div class="mb-3">
+            <label for="iddiversos" class="form-label">ID Diversos</label>
+            <input type="number" class="form-control" formControlName="iddiversos" placeholder="ID da doação diversas">
+        </div>
+
+        <div class="mb-3">
+            <label for="iddoador" class="form-label">ID do doador</label>
+            <input type="number" class="form-control" formControlName="iddoador" placeholder="ID do doador">
+        </div>
+
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descricao</label>
+            <input type="text" class="form-control" formControlName="descricao" placeholder="10 calças">
+        </div>
+<!-- 
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descricao</label>
+            <input type="text" class="form-control"  formControlName="descricao" placeholder="10kg de feijão">
+        </div>
+         -->
+        <button type="submit" class="btn btn-primary w-100" >Alterar</button>
+    </form>
+</div>

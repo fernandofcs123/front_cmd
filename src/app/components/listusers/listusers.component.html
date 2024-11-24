@@ -1,0 +1,43 @@
+<div class="list-container">
+    <h2 class="text-center">Lista de Doadores</h2>
+    <!-- Botão para adicionar novo usuário -->
+    <div class="sidebar" [class.open]="isSidebarOpen">
+        <button class="toggle-btn" (click)="toggleSidebar()">☰ Menu</button>
+        <div class="sidebar-content">
+            <button class="btn btn-primary" (click)="cadUser()">Novo Doador</button>
+            <button class="btn btn-primary" (click)="registrarSaida()">Cadastrar Saída</button>
+            <button class="btn btn-primary" (click)="entradas()">Histórico de Entradas</button>
+            <button class="btn btn-primary" (click)="diversos()">Doações Diversas</button>
+            <button class="btn btn-primary" (click)="saidas()">Histórico de Saídas</button>
+            <button class="btn btn-primary" (click)="historico()">Histórico Completo</button>
+        </div>
+    </div>
+
+    <!-- Tabela de usuários -->
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">IDdoador</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col" class="text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Exemplo de usuário - repita essa linha para cada usuário da lista -->
+            @for(user of userList$ | async; track user;){
+            <tr>
+                <td>{{user.iddoadores}}</td>
+                <td>{{user.nome}}</td>
+                <td>{{user.telefone}}</td>
+                <td class="text-center">
+                    <button class="btn btn-sm btn-success btn-action" (click)="editUser()">Editar</button>
+                    <button class="btn btn-sm btn-danger btn-action" (click)="excluirDoador()">Excluir</button>
+                    <button class="btn btn-sm btn-info btn-action" (click)="novaDoacao()">Nova Doação</button>
+                </td>
+            </tr>
+            }
+            <!-- Fim do exemplo de usuário -->
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,122 @@
+/* Card de listagem */
+.list-container {
+    max-width: 100%;
+    min-width: 240px;
+    width: 95%;
+    margin: 0 auto;
+    /* Centraliza o container */
+    padding: 0.5rem;
+    /* Reduzido ao mínimo */
+    border-radius: 0.4rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Estilização da tabela */
+.table {
+    margin-top: 0.5rem;
+    /* Reduzido para compactação */
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.65rem;
+    /* Tamanho mínimo da fonte */
+}
+
+/* Ajusta o tamanho das células */
+.table th,
+.table td {
+    padding: 0.2rem;
+    /* Padding mínimo */
+    text-align: left;
+    word-wrap: break-word;
+}
+
+/* Cabeçalhos */
+.table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Botão de novo usuário */
+.btn-primary {
+    background-color: #2CC0FF;
+    border: none;
+    transition: background-color 0.2s ease;
+    padding: 0.2rem 0.4rem;
+    /* Padding mínimo */
+    font-size: 0.65rem;
+}
+
+.btn-primary:hover {
+    background-color: yellow;
+}
+
+/* Botões de ação */
+.btn-action {
+    margin-right: 0.1rem;
+    /* Margem reduzida */
+    font-size: 0.6rem;
+    padding: 0.1rem 0.3rem;
+    /* Padding ainda menor */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    /* Reduz padding no container */
+    .list-container {
+        padding: 0.4rem;
+    }
+
+    /* Tabela mais compacta */
+    .table th,
+    .table td {
+        font-size: 0.6rem;
+        padding: 0.1rem;
+    }
+
+    /* Torna a tabela rolável horizontalmente */
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Botões mais compactos */
+    .btn-primary,
+    .btn-action {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Container ultra compacto */
+    .list-container {
+        padding: 0.3rem;
+    }
+
+    /* Fonte ainda menor na tabela */
+    .table th,
+    .table td {
+        font-size: 0.55rem;
+        padding: 0.1rem;
+    }
+
+    /* Oculta colunas menos relevantes */
+    .table th:nth-child(2),
+    .table td:nth-child(2),
+    .table th:nth-child(3),
+    .table td:nth-child(3) {
+        display: none;
+        /* Oculta colunas IDEntrada e IDSaida */
+    }
+
+    /* Botões ultra compactos */
+    .btn-primary,
+    .btn-action {
+        font-size: 0.55rem;
+        padding: 0.1rem 0.2rem;
+    }
+}
